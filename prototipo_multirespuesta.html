@@ -76,6 +76,23 @@
         ul li {
             margin-bottom: 5px;
         }
+        #reset-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #c82333;
+}
     </style>
 </head>
 <body>
@@ -287,5 +304,6 @@ const questionsPerTest = 40; // Total de preguntas en el test
             document.getElementById('question-options').style.display = 'none'; // Asegurar que las opciones estén ocultas
         }
     </script>
+     <button id="reset-button" onclick="resetQuestions()">Reiniciar Preguntas</button>
 </body>
 </html>
