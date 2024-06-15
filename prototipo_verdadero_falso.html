@@ -188,6 +188,7 @@ const questionsPerTest = 50;
 
         function showQuestion(question) {
             document.getElementById('question').innerText = question.question;
+            enableAnswerButtons();
         }
 
         function checkAnswer(answer) {
@@ -209,6 +210,7 @@ const questionsPerTest = 50;
             document.getElementById('answered-count').textContent = answeredCount;
             document.getElementById('answer-buttons').style.display = 'none';
             document.getElementById('next-button').style.display = 'block';
+            disableAnswerButtons();
         }
 
         function nextQuestion() {
@@ -245,6 +247,22 @@ const questionsPerTest = 50;
             });
             incorrectQuestionsContainer.style.display = 'block';
         }
+
+
+        function disableAnswerButtons() {
+            const buttons = document.querySelectorAll('.answer-button');
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+        }
+
+        function enableAnswerButtons() {
+            const buttons = document.querySelectorAll('.answer-button');
+            buttons.forEach(button => {
+                button.disabled = false;
+            });
+        }
+
     </script>
     <button id="reset-button" onclick="resetQuestions()">Reiniciar Preguntas</button>
 </body>
